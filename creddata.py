@@ -10,6 +10,11 @@ class Credentials:
         '''
         Credentials.cred_list.append(self)
 
+    def delete_cred(self):
+        '''
+        delete credentials 
+        '''
+        Credentials.cred_list.remove(self)
 
     def __init__(self, account , username , password):
 
