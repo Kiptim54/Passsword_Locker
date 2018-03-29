@@ -68,6 +68,6 @@ class TestCredentials(unittest.TestCase):
         '''
         test if all credentials can be displayed
         '''
-        self.assertEqual(Credentials.display_cred(), Contact.cred_list)
+        self.assertEqual(Credentials.display_cred(), Credentials.cred_list)
 if __name__ == '__main__':
     unittest.main()
