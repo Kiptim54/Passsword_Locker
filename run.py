@@ -47,6 +47,11 @@ def find_account(account):
     method to search for an account
     '''
     return Credentials.find_account(account)
+def delete_cred(account):
+    '''
+    method to delete account
+    '''
+    account.delete_cred()
 
 
 
@@ -108,7 +113,9 @@ def main():
                 print(f"{search_acc.account} {search_acc.email} { search_acc.passlock}")
             else: print("This account does not exist")
             
-
+        elif short_code == "de":
+            print("Key in account you want to delete: ")
+            
 
         elif short_code == 'ex':
             print("*"*30)
