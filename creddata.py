@@ -40,9 +40,9 @@ class Credentials:
         '''
         return cls.cred_list
 
-    def __init__(self, account , username , password):
+    def __init__(self, account , email , passlock):
 
         self.account = account
-        self.username = username
-        self.password = password
+        self.email = email
+        self.passlock = passlock
 
