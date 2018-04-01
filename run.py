@@ -7,26 +7,26 @@ import random
 
 def create_useraccount(username, password):
     '''
-    Function creates a user account
+    method creates a user account
     '''
     new_user = User(username, password)
     return new_user
 def save_user(user):
     '''
-    function save user account
+    method save user account
     '''
     user.save_user()
 
 def find_user(username):
     '''
-    function for find user using username
+    method for find user using username
     '''
     return User.find_user(username)
 
 #creddata
 def create_credentials(account, email, passlock):
     '''
-    create credentials details
+    method credentials details
     '''
     new_cred = Credentials(account, email, passlock)
     return new_cred
