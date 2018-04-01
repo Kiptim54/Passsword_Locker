@@ -89,7 +89,7 @@ def main():
 
         elif short_code == "ca":
             print("Enter account details: ")
-            print("Account Company: ")
+            print("Account Company(e.g:Facebook ")
             account = input()
             print("Email: ")
             email = input()
