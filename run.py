@@ -63,7 +63,7 @@ def main():
     print(f"Hey {name}, please create an account to access Password Locker")
     print('\n')
     print("*" * 80)
-    print("Reply with these short codes : lg - to login cc - create a new account,  ex -exit ")
+    print("Reply with these short codes : cc - create a new account,  ex -exit ")
     print("*" * 80)
 
     while True:
@@ -75,19 +75,17 @@ def main():
             print("Username: ")
             username = input()
 
-            print("password")
+            print("Password: ")
             password = input()
 
             save_user(create_useraccount(username, password))
-            print("*" * 20)
-            print("Account information: ")
+            print(f"{name}'s Account information: ")
             print(f"Username: {username} , Password:{password}")
-            print("*" * 20)
-            print(f"Remember this information, now login")
             print(f"Logged in. Welcome {username}!")
-            print("*" * 50)
+            print("*" * 80)
             #working with creddata now
             print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
+            print("*" * 80)
 
         elif short_code == "ca":
             print("Enter account details: ")
