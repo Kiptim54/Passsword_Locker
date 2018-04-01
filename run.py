@@ -13,7 +13,7 @@ def create_useraccount(username, password):
     return new_user
 def save_user(user):
     '''
-    method save user account
+    method save user  account
     '''
     user.save_user()
 
