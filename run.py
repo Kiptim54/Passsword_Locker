@@ -18,7 +18,7 @@ def save_user(user):
     user.save_user()
 
 def find_user(username):
-    ''
+    '''
     method for find user using username
     '''
     return User.find_user(username)
