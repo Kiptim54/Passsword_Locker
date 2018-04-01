@@ -91,7 +91,7 @@ def main():
 
         elif short_code == "ca":
             print("Enter account details: ")
-            print("Account Company(e.g:Facebook ")
+            print("Account Company(e.g:Facebook): ")
             account = input()
             print("Email: ")
             email = input()
@@ -106,15 +106,15 @@ def main():
 
         elif short_code == "da":
             print(f"These are your accounts {username}:")
+            print("*" * 30)
             for cred in display_cred():
-                print("*" * 80)
                 print(f"{cred.account} {cred.email} {cred.passlock}")
-                print("*" * 80)
             else:
+                print("*" * 30)
                 print("If empty, you do not have any accounts saved")
 
         elif short_code == "fa":
-            print("Key in  the account you are searching for (ie.'Facebook': " )
+            print("Key in  the account you are searching for (ie.'Facebook'): " )
             search_cred= input()
             if find_account(search_cred):
                 search_acc = find_account(search_cred)
@@ -122,14 +122,15 @@ def main():
             else: print("This account does not exist")
             
         elif short_code == "gp":
-            letters= "abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
-            how_many = len(letters)
-            print("How long would you like your password to be? ")
-            print(f"p.s: Maximum length of password is {how_many}")
-            lent = int(input())
-            password = "".join(random.sample(letters, lent))
-            print(f"Your password has {lent} characters ")
-            print(password)
+                letters= "abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
+                how_many = len(letters)
+                print("How long would you like your password to be? ")
+                print(f"p.s: Maximum length of password is {how_many}")
+                lent = int(input())
+                password = "".join(random.sample(letters, lent))
+                print(f"Your password has {lent} characters ")
+                print(password)
+                
             
 
         elif short_code == 'ex':
