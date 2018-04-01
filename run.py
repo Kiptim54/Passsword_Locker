@@ -62,8 +62,10 @@ def main():
     name = input ()
     print(f"Hey {name}, please create an account to access Password Locker")
     print('\n')
-    print("*" * 20)
+    print("*" * 40)
     print("Reply with these short codes : lg - to login cc - create a new account,  ex -exit ")
+    print("*" * 40)
+
     while True:
         short_code = input().lower()
 
