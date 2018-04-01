@@ -79,8 +79,10 @@ def main():
             password = input()
 
             save_user(create_useraccount(username, password))
+            print('\n')
             print(f"{name}'s Account information: ")
             print(f"Username: {username} , Password:{password}")
+            print('\n')
             print(f"Logged in. Welcome {username}!")
             print("*" * 80)
             #working with creddata now
@@ -97,13 +99,17 @@ def main():
             passlock = input()
 
             save_cred(create_credentials(account, email, passlock))
-            print("Credentials saved!")
+            print("Credentials saved! Enter 'da' to see account")
+            print("*" * 80)
             print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
+            print("*" * 80)
 
         elif short_code == "da":
-            print(f"These are your accounts {username}")
+            print(f"These are your accounts {username}:")
             for cred in display_cred():
+                print("*" * 80)
                 print(f"{cred.account} {cred.email} {cred.passlock}")
+                print("*" * 80)
             else:
                 print("If empty, you do not have any accounts saved")
 
