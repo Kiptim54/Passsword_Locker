@@ -60,7 +60,7 @@ def main():
     # Dealing user class first
     print("Hello! Welcome to Password Locker! Please Key in your name:  ")
     name = input ()
-    print(f"Hey, {name} would you like to create an account or login in?")
+    print(f"Hey {name}, would you like to create an account or login in?")
     print('\n')
     print("*" * 20)
     print("Reply with these short codes : lg - to login cc - create a new account,  ex -exit ")
