@@ -3,7 +3,7 @@ from creddata import Credentials
 from userdata import User
 import random
 
-#userdata
+#userdata 
 
 def create_useraccount(username, password):
     '''
@@ -19,7 +19,7 @@ def save_user(user):
 
 def find_user(username):
     '''
-    find user using username
+    function for find user using username
     '''
     return User.find_user(username)
 
