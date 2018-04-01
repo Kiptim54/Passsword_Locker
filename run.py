@@ -1,6 +1,7 @@
 #!/usr/bin/env python3.6
 from creddata import Credentials
 from userdata import User
+import random
 
 #userdata
 
@@ -113,8 +114,15 @@ def main():
                 print(f"{search_acc.account} {search_acc.email} { search_acc.passlock}")
             else: print("This account does not exist")
             
-        elif short_code == "de":
-            print("Key in account you want to delete: ")
+        elif short_code == "gp":
+            letters= "abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
+            how_many = len(letters)
+            print("How long would you like your password to be? ")
+            print(f"p.s: Maximum length of password is {how_many}")
+            lent = int(input())
+            password = "".join(random.sample(letters, lent))
+            print(f"Your password has {lent} characters ")
+            print(password)
             
 
         elif short_code == 'ex':
