@@ -1,5 +1,7 @@
 import unittest
+import pyperclip
 from creddata import Credentials
+
 
 class TestCredentials(unittest.TestCase):
 
@@ -7,7 +9,7 @@ class TestCredentials(unittest.TestCase):
         '''
         setup before a test is run
         '''
-        self.new_cred = Credentials("Facebook", "Kiptim54", "Author7")
+        self.new_cred = Credentials("Facebook", "Kiptim54@gmail.com", "Author7")
     def tearDown(self):
         '''
         clear list before any test is run
@@ -19,8 +21,8 @@ class TestCredentials(unittest.TestCase):
         check if instances initialize as expected
         '''
         self.assertEqual(self.new_cred.account, "Facebook")
-        self.assertEqual(self.new_cred.username, "Kiptim54")
-        self.assertEqual(self.new_cred.password, "Author7")
+        self.assertEqual(self.new_cred.email, "Kiptim54@gmail.com")
+        self.assertEqual(self.new_cred.passlock, "Author7")
     def test_save_credentials(self):
         '''
         check if credentials can be saved
@@ -69,5 +71,14 @@ class TestCredentials(unittest.TestCase):
         test if all credentials can be displayed
         '''
         self.assertEqual(Credentials.display_cred(), Credentials.cred_list)
+    def test_copy_password(self):
+        '''
+        test whether generated password can be copied
+        '''
+        self.new_cred.save_cred()
+        Credentials.copy_passlock("Jerotich")
+        self.assertEqual(self.new_cred.passlock, pyperclip.paste())
+
+
 if __name__ == '__main__':
     unittest.main()

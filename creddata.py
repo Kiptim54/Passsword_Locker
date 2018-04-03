@@ -1,3 +1,5 @@
+import pyperclip
+
 class Credentials:
     '''
     class that creates instaces of user accounts
@@ -39,6 +41,11 @@ class Credentials:
         method that returns all credentials
         '''
         return cls.cred_list
+    @classmethod
+    def copy_passlock(cls, passlock):
+            find_account = Credentials.find_account(passlock)
+            pyperclip.copy(find_account.passlock)
+            
 
     def __init__(self, account , email , passlock):
 
