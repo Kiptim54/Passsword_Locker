@@ -95,17 +95,35 @@ def main():
             account = input()
             print("Email: ")
             email = input()
-            print("Password: ")
-            passlock = input()
-
-            save_cred(create_credentials(account, email, passlock))
-            print("Credentials saved! Enter 'da' to see account")
-            print("*" * 80)
-            print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
-            print("*" * 80)
+        
+            print("Would you like a generated password?")
+            if input()=="yes":
+                letters= "abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
+                how_many = len(letters)
+                print("How long would you like your password to be? ")
+                print(f"p.s: Maximum length of password is {how_many}")
+                lent = int(input())
+                passlock = "".join(random.sample(letters, lent))
+                print(f"Your password has {lent} characters ")
+                print(passlock)
+                save_cred(create_credentials(account, email, passlock))
+                print("Credentials saved! Enter 'da' to see account")
+                print("*" * 80)
+                print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
+                print("*" * 80)
+            elif input == "no":
+                print("Password: ")
+                passlock = input()   
+                save_cred(create_credentials(account, email, passlock))
+                print("Credentials saved! Enter 'da' to see account")
+                print("*" * 80)
+                print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
+                print("*" * 80)
+            else:
+                print("i dont get it please use shortcode 'ca' and start again")
 
         elif short_code == "da":
-            print(f"These are your accounts {username}:")
+            print(f"These are your accounts {name}:")
             print("*" * 30)
             for cred in display_cred():
                 print(f"{cred.account} {cred.email} {cred.passlock}")
